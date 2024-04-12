@@ -64,17 +64,16 @@
 <table valign="middle" align="center" width="3.85in" height="1.95in">
 <tr>
     <td colspan="3" valign="top" align="left" font-size="20pt" margin-top="6px" font-weight="bold" style="max-width: 100%; overflow: hidden; text-align: center;">
-        <#assign company_len = [record.shipcompany?length,30]?min>
-        <b>${record.shipcompany?substring(0,company_len)}</b>
+                <#assign company_len = [record.shipcompany?length,25]?min>
+                <b>${record.shipcompany?substring(0,company_len)}</b>
     </td>
 </tr>
-
 
     <tr>
         <td colspan="2" valign="middle" rowspan="3" align="left">
             <#if record.shipattention?has_content>
-            ${record.shipattention}
-            <br/>
+                   ${record.shipattention}
+                   <br/>
         </#if>
         <#if record.shipaddr1?has_content>
         ${record.shipaddr1}
@@ -116,17 +115,7 @@ ${record.shippeddate}
         ${currindex} of ${counter}
     </td>
 </tr>
-<tr>
-    <td colspan="2" valign="middle" align="left" font-size="15pt" font-weight="bold" style="margin-top: -7px;">
-        Stop #: ${record.custbody_vel_delivery_stop}
-    </td>
-    <td class="rightcol" colspan="1" valign="middle" align="right" font-size="15pt" font-weight="bold" style="margin-top: -7px;">
-        <#assign currindex = package?index + 1>
-        ${currindex} of ${counter}
-    </td>
-</tr>
-
-
+<tr>&nbsp;</tr>
         </table>
 
         </body>
